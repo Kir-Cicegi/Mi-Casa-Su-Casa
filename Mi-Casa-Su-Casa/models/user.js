@@ -22,11 +22,14 @@ const userSchema = new Schema({
        
     },
     reviews: [reviewsSchema],
+    googleId: String,
+   
     // tickets: [{
     //     type: Schema.Types.ObjectId, 
     //     ref: 'Ticket'}]
   }, {
         timestamps: true
 });
+
 
   module.exports = mongoose.model('User', userSchema);

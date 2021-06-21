@@ -38,9 +38,15 @@
           <a href="" class="brand-logo left">Mi Casa Su Casa</a>
           <!-- Add login UI here -->
           <ul class="right">
-            <li>
-        
-            </li>
+            
+              <li>
+                <% if (user) { %>
+                  <a href="/logout"><i class="material-icons left">trending_flat</i>Log Out</a>
+                <% } else { %>
+                  <a href="/auth/google"><i class="material-icons left">vpn_key</i>Login with Google</a>
+                <% } %>
+                </li>
+            
           </ul>
         </div>
       </nav>

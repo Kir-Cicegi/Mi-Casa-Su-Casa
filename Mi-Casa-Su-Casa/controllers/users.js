@@ -1,4 +1,5 @@
 var User = require('../models/user');
+const passport = require('passport');
 
 module.exports = {
   create,
@@ -12,8 +13,10 @@ function newUser(req, res) {
     res.render('users/form', {user: req.params.id});
   }
 
+  //add the googleid of the new user
+
   function create(req, res) {
-    const user = new User(req.body);
+    const user = new User(req.body, newUser);
     console.log(req.body)
     user.save(function(err) {
       if (err) return res.render('users/form');
@@ -23,10 +26,13 @@ function newUser(req, res) {
 
 //modify it to only show user info corresponding to the google id 
   function index(req, res) {
-    User.find({}, function(err, users) {
-      res.render('users/index', { users });
+    User.find({newUser}, function(err, users) {
+      res.render('users/index', { users, user: req.user, name:req.query.name });
     });
   }
+
+
+ 
 
 
 //   function show(req, res) {
