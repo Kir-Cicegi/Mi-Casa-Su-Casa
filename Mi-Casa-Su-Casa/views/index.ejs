@@ -2,10 +2,48 @@
 <html>
   <head>
     <title><%= title %></title>
+    <!-- Google Icon Fonts used by Materialize -->
+  <link href="https://fonts.googleapis.com/icon?family=Material+Icons" rel="stylesheet">
+  <!-- Materialize CSS Framework -->
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/materialize/1.0.0/css/materialize.min.css">
+  <link rel="stylesheet" href="stylesheets/style.css" />
+  <!-- JavaScript for Materialize -->
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/materialize/1.0.0/js/materialize.min.js"></script>
     <link rel='stylesheet' href='/stylesheets/style.css' />
+    <style>
+      body {
+        background-image: url('https://images.unsplash.com/photo-1469854523086-cc02fe5d8800?ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&ixlib=rb-1.2.1&auto=format&fit=crop&w=2616&q=80');
+        background-repeat: no-repeat;
+      
+        background-size: cover;
+        height: 100vh;
+        text-align: center;
+        
+      }
+      .nav-wrapper {
+        background-color: blanchedalmond;
+       
+      }
+   
+    
+      button{
+        background-color: aliceblue;
+      }
+      </style>
   </head>
   <body>
-    <h1><%= title %></h1>
-    <p>Welcome to <%= title %></p>
+    <div class="navbar-fixed">
+      <nav>
+        <div class="nav-wrapper">
+          <a href="" class="brand-logo left">Mi Casa Su Casa</a>
+          <!-- Add login UI here -->
+          <ul class="right">
+            <li>
+        
+            </li>
+          </ul>
+        </div>
+      </nav>
+    
   </body>
 </html>
