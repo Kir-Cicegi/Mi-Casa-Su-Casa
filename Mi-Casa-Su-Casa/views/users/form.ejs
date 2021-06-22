@@ -11,7 +11,7 @@
 
     <form id="new-profile" action="/users/<%=user%>" method="POST">
         <label>Name:</label>
-        <input type="text" name="name">
+        <input type="text" name="name" placeholder="<%=name%>">
         <br><br>
         <label>City:</label>
         <input type="text" name="city">
@@ -37,7 +37,7 @@
           </form> -->
           <br><br>
           <label>Date of Birth:
-            <input type="datetime-local" name="dob">
+            <input type="date" name="dob">
         </label>
         <br><br>
         <input type="submit" value="Update Profile">

@@ -2,12 +2,8 @@ const mongoose = require('mongoose');
 
 const Schema = mongoose.Schema;
 
-const reviewsSchema = new Schema({
-    title: {
-        type: String,
-        
-    },
-    ranking: String,
+const commentsSchema = new Schema({
+    
     content: String,
 }, {
     timestamps: true
@@ -21,8 +17,9 @@ const userSchema = new Schema({
         type: Date,
        
     },
-    reviews: [reviewsSchema],
+    comments: [commentsSchema],
     googleId: String,
+    email: String,
    
   }, {
         timestamps: true

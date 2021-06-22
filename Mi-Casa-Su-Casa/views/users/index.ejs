@@ -24,7 +24,7 @@
     </style>
 </head>
 <body>
-        <% users.forEach(function(u) { %>
+        <% user.forEach(function(u) { %>
             
     <!--start nav bar--> 
 
@@ -57,7 +57,7 @@
                       <li><a href="#"><span class="glyphicon glyphicon-user"></span> My Account</a></li>
                       <li>
                         <% if (user) { %>
-                          <a href="/logout"><i class="material-icons left">trending_flat</i>Log Out</a>
+                          <a href="/logout"><i class="material-icons left"></i>Log Out</a>
                         <% } else { %>
                           <a href="/auth/google"><i class="material-icons left"></i>Login with Google</a>
                         <% } %>
@@ -98,6 +98,9 @@
                                     <div class="user-button">
                                         <div class="row">
                                             <div class="col-lg-6">
+                                                <a href="/users/new"><button type="button" class="btn btn-primary btn-sm btn-block"><i class="fa fa-pencil-square-o "></i> Edit Your Profile</button></a>
+                                            </div>
+                                            <div class="col-lg-6">
                                                 <button type="button" class="btn btn-primary btn-sm btn-block"><i class="fa fa-envelope"></i> Send Message</button>
                                             </div>
                                             <div class="col-lg-6">
@@ -113,7 +116,7 @@
                                 <div class="widget widget-tabbed">
                                     <!-- Nav tab -->
                                     <ul class="nav nav-tabs nav-justified">
-                                      <li class="active"><a href="#my-timeline" data-toggle="tab"><i class="fa fa-pencil"></i> Timeline</a></li>
+                                      <li class="active"><a href="#my-timeline" data-toggle="tab"><i class="fa fa-comments"></i> Comments</a></li>
                                       <li><a href="#about" data-toggle="tab"><i class="fa fa-user"></i> About</a></li>
                                       <li><a href="#user-activities" data-toggle="tab"><i class="fa fa-laptop"></i> Activities</a></li>
                                       <li><a href="#mymessage" data-toggle="tab"><i class="fa fa-envelope"></i> Message</a></li>
@@ -130,8 +133,8 @@
                                                 
                                                 <!-- Begin timeline -->
                                                 <div class="the-timeline">
-                                                    <form role="form" class="post-to-timeline">
-                                                        <textarea class="form-control" style="height: 70px;margin-bottom:10px;" placeholder="Whats on your mind..."></textarea>
+                                                    <form action="/users/<%= u.id%>/comments" method="POST">
+                                                        <textarea class="form-control" style="height: 70px;margin-bottom:10px;" placeholder="Add your comment here..." name="content"></textarea>
                                                         <div class="row">
                                                         <div class="col-sm-6">
                                                             <a class="btn btn-sm btn-default"><i class="fa fa-camera"></i></a>
@@ -143,17 +146,19 @@
                                                     </form>
                                                     <br><br>
                                                     <ul>
+
                                                         <li>
-                                                            <div class="the-date">
-                                                                <span>01</span>
-                                                                <small>Feb</small>
-                                                            </div>
-                                                            <h4>Lorem ipsum dolor!</h4>
-                                                            <p>
-                                                            Lorem ipsum dolor sit amet, consectetuer adipiscing elit, sed diam nonummy nibh euismod tincidunt ut laoreet dolore magna aliquam erat volutpat. 
-                                                            </p>
+                                                           
+                                                       
+                                                            <% u.comments.forEach(function(c) { %>
+                                                                <h4><%= c.createdAt.toLocaleDateString() %></h4>
+                                                                <p>
+                                                                    <%= c.content %> 
+                                                                </p>
+                                                                <% }); %>
+
                                                         </li>
-                                                        
+                                                      
                                                     </ul>
                                                 </div><!-- End div .the-timeline -->
                                                 <!-- End timeline -->
