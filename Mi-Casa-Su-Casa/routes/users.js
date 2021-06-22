@@ -5,8 +5,8 @@ const userCtrl = require('../controllers/users')
 
 
 
-router.get('/', userCtrl.index);
-router.get('/new', userCtrl.new);
+// router.get('/', userCtrl.index);
+router.get('/new', userCtrl.index);
 
 router.post('/', userCtrl.create);
 

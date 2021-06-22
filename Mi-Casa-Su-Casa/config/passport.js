@@ -17,7 +17,9 @@ passport.use(new GoogleStrategy({
       } else {
         // we have a new student via OAuth!
         var newUser = new User({
-          googleId: profile.id
+            name: profile.displayName,
+            email: profile.emails[0].value,  
+            googleId: profile.id
         });
         
         newUser.save(function(err) {
