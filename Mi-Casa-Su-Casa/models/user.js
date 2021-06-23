@@ -10,16 +10,25 @@ const commentsSchema = new Schema({
   });
 
 
+
+
 const userSchema = new Schema({
     name: String,
+    comments: [commentsSchema],
+    googleId: String,
+    about: {
+        type: String, 
+    },
+    interests: {
+        type: String, 
+    },
     city: String,
     dob: {
         type: Date,
        
     },
-    comments: [commentsSchema],
-    googleId: String,
     email: String,
+    phoneNo: Number,
    
   }, {
         timestamps: true

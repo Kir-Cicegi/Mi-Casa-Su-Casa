@@ -1,7 +1,7 @@
-var express = require('express');
-var router = express.Router();
-var commentsCtrl = require('../controllers/comments');
+// var express = require('express');
+// var router = express.Router();
+// var commentsCtrl = require('../controllers/comments');
 
-router.post('/users/:id/comments', commentsCtrl.create);
+// router.post('/users/:id/comments', commentsCtrl.create);
 
-module.exports = router;
+// module.exports = router;

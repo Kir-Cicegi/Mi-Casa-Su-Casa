@@ -2,14 +2,17 @@ var express = require('express');
 var router = express.Router();
 const userCtrl = require('../controllers/users')
 
+var commentsCtrl = require('../controllers/comments');
+
 
 
 
 // router.get('/', userCtrl.index);
-router.get('/', userCtrl.index);
-router.get('/new', userCtrl.edit)
+router.get('/', userCtrl.show);
+
 // router.post('/', userCtrl.create);
-router.post('/users/:id', userCtrl.addToSchema);
+router.post('/:id/update', userCtrl.update);
+router.post('/:id/comments', commentsCtrl.post);
 
 // function isLoggedIn(req, res, next) {
 //   if ( req.isAuthenticated() ) return next();

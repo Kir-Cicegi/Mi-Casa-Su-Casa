@@ -10,6 +10,7 @@ passport.use(new GoogleStrategy({
   function(accessToken, refreshToken, profile, cb) {
       console.log("passport")
       console.log(profile)
+   
     User.findOne({ 'googleId': profile.id }, function(err, user) {
       if (err) return cb(err);
       if (user) {
@@ -25,11 +26,13 @@ passport.use(new GoogleStrategy({
         newUser.save(function(err) {
           if (err) return cb(err);
           return cb(null, newUser);
+  
         });
       }
     });
   }
 ));
+
 
 passport.serializeUser(function(user, done) {
     done(null, user.id);

@@ -24,7 +24,7 @@
     </style>
 </head>
 <body>
-        <% user.forEach(function(u) { %>
+        
             
     <!--start nav bar--> 
 
@@ -78,13 +78,13 @@
 
             <div class="container bootdey">
                 <div class="content-page">
-                    <div class="profile-banner" style="background:url(https://bootdey.com/img/Content/bg1.jpg);">
+                    <div class="profile-banner" style="background:url(https://images.unsplash.com/photo-1471922694854-ff1b63b20054?ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&ixlib=rb-1.2.1&auto=format&fit=crop&w=2104&q=80);" >
                         <div class="col-sm-3 avatar-container">
                             <img src="https://images.unsplash.com/photo-1520645521318-f03a712f0e67?ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&ixlib=rb-1.2.1&auto=format&fit=crop&w=1500&q=80" class="img-circle profile-avatar" alt="User avatar">
                         </div>
                         <div class="col-sm-12 profile-actions text-right">
-                            <button type="button" class="btn btn-success btn-sm"><i class="fa fa-user-circle"></i> <%=u.name%></button>
-                            <button type="button" class="btn btn-primary btn-sm"><i class="fa fa-map-marker"></i> <%= u.city%></button>
+                            <button type="button" class="btn btn-success btn-sm"><i class="fa fa-user-circle"></i> <%=user.name%></button>
+                            <button type="button" class="btn btn-primary btn-sm"><i class="fa fa-map-marker"></i> </button>
                         </div>
                     </div>
                     <div class="content">
@@ -116,9 +116,13 @@
                                 <div class="widget widget-tabbed">
                                     <!-- Nav tab -->
                                     <ul class="nav nav-tabs nav-justified">
-                                      <li class="active"><a href="#my-timeline" data-toggle="tab"><i class="fa fa-comments"></i> Comments</a></li>
+
                                       <li><a href="#about" data-toggle="tab"><i class="fa fa-user"></i> About</a></li>
-                                      <li><a href="#user-activities" data-toggle="tab"><i class="fa fa-laptop"></i> Activities</a></li>
+                                      <li class="active"><a href="#my-timeline" data-toggle="tab"><i class="fa fa-comments"></i> Comments</a></li>
+
+                                      
+
+                                      <li><a href="#user-activities" data-toggle="tab"><i class="fa fa-users"></i> Contacts</a></li>
                                       <li><a href="#mymessage" data-toggle="tab"><i class="fa fa-envelope"></i> Message</a></li>
                                     </ul>
                                     <!-- End nav tab -->
@@ -133,7 +137,7 @@
                                                 
                                                 <!-- Begin timeline -->
                                                 <div class="the-timeline">
-                                                    <form action="/users/<%= u.id%>/comments" method="POST">
+                                                    <form action="/users/<%= user._id%>/comments" method="POST">
                                                         <textarea class="form-control" style="height: 70px;margin-bottom:10px;" placeholder="Add your comment here..." name="content"></textarea>
                                                         <div class="row">
                                                         <div class="col-sm-6">
@@ -150,7 +154,7 @@
                                                         <li>
                                                            
                                                        
-                                                            <% u.comments.forEach(function(c) { %>
+                                                            <% user.comments.forEach(function(c) { %>
                                                                 <h4><%= c.createdAt.toLocaleDateString() %></h4>
                                                                 <p>
                                                                     <%= c.content %> 
@@ -169,34 +173,34 @@
                                         <!-- Tab about -->
                                         <div class="tab-pane animated fadeInRight" id="about">
                                             <div class="user-profile-content">
+                                        
                                                 <h5><strong>ABOUT</strong> ME</h5>
                                                 <p>
-                                                Lorem ipsum dolor sit amet, consectetuer adipiscing elit, sed diam nonummy nibh euismod tincidunt ut laoreet dolore magna aliquam erat volutpat. Ut wisi enim ad minim veniam, quis nostrud exerci tation ullamcorper suscipit lobortis nisl ut aliquip ex ea commodo consequat. 
+                                                    <%= user.about%>
                                                 </p>
+                                                <p><strong>Date of Birth:</strong><%= user.dob%></p>
+                                                <p><strong>City:</strong><%= user.city%></p>
                                                 <hr>
                                                 <div class="row">
                                                     <div class="col-sm-6">
                                                         <h5><strong>CONTACT</strong> ME</h5>
                                                             <address>
                                                                 <strong>Phone</strong><br>
-                                                                <abbr title="Phone">+62 857 123 4567</abbr>
+                                                                <abbr title="Phone"><%= user.phoneNo%></abbr>
                                                             </address>
                                                             <address>
                                                                 <strong>Email</strong><br>
-                                                                <a href="mailto:#">first.last@example.com</a>
+                                                                <a href="mailto:#"><%= user.email%></a>
                                                             </address>
-                                                            <address>
-                                                                <strong>Website</strong><br>
-                                                                <a href="http://r209.com">http://r209.com</a>
-                                                            </address>
+                                                            
                                                     </div>
+                                                   
                                                     <div class="col-sm-6">
-                                                        <h5><strong>MY</strong> SKILLS</h5>
-                                                        <p>UI Design</p>
-                                                        <p>Clean and Modern Web Design</p>
-                                                        <p>PHP and MySQL Programming</p>
-                                                        <p>Vector Design</p>
+                                                        <h5><strong>MY</strong> Interests</h5>
+                                                        <p><%= user.interests%></p>
+                                                       
                                                     </div>
+                                                 
                                                 </div><!-- End div .row -->
                                             </div><!-- End div .user-profile-content -->
                                         </div><!-- End div .tab-pane -->
@@ -401,7 +405,7 @@
 
 
 
-        <% }); %>
+    
   
 </body>
 </html>

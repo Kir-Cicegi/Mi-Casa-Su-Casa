@@ -9,12 +9,22 @@
 <body>
     <!-- make the form to register details -->
 
-    <form id="new-profile" action="/users/<%=user%>" method="POST">
-        <label>Name:</label>
-        <input type="text" name="name" placeholder="<%=name%>">
+    <form id="about-me" action="/users/<%=user%>/about" method="POST">
+        <label>About Me:</label>
+        <input type="text" name="about" >
+        <br><br>
+        <label>My interests:</label>
+        <input type="text" name="interests" >
+        <br><br>
+        <label>Date of Birth:
+            <input type="date" name="dob">
+        </label>
         <br><br>
         <label>City:</label>
         <input type="text" name="city">
+        <br><br>
+        <label>Phone Number:</label>
+        <input type="number" name="phoneNo">
         <!-- <br><br>
         <label>Ranking:</label>
         <select name="ranking">
@@ -36,12 +46,19 @@
             </label>
           </form> -->
           <br><br>
-          <label>Date of Birth:
-            <input type="date" name="dob">
-        </label>
-        <br><br>
+          
         <input type="submit" value="Update Profile">
       </form>
     
 </body>
 </html>
+
+
+<!--About me text area
+    email
+    phone number
+    city
+    dob
+
+
+-->

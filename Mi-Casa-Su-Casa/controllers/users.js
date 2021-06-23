@@ -2,33 +2,16 @@ var User = require('../models/user');
 const passport = require('passport');
 
 module.exports = {
-  addToSchema,
-edit,
-  index,
+  update,
+    show,
+//   index,
 };
 
 
 
-function edit(req, res) {
-    res.render('users/form', {user: req.params.id, name: req.query.name});
-
-  }
-
-  //add the googleid of the new user
-
-//   function create(req, res) {
-//       //use the the document with googleid and embed this new user info there
-//     const user = new User(req.body, newUser);
-//     console.log(req.body)
-//     user.save(function(err) {
-//       if (err) return res.render('users/form');
-//       res.redirect('/users');
-//     });
-//   }
 
 
-
-function addToSchema(req, res) {
+function update(req, res) {
     User.findById(req.params.id, function(err, user) {
         
       user.push(req.body);
@@ -39,24 +22,36 @@ function addToSchema(req, res) {
   }
 
 //modify it to only show user info corresponding to the google id 
-  function index(req, res) {
-    User.find({}, function(err, user) {
-      res.render('users/index', { user, name:req.query.name });
-    });
-  }
+
+//if the googleId matches take them to that show page
+//   function index(req, res) {
+//       console.log("req query", req.query)
+//       console.log("req params", req.params.id)
+//     User.find({}, function(err, user) {
+//       res.render('users/index', { user, name:req.query.name });
+//     });
+//   }
 
 
- 
+//   const _id = ObjectID(req.session.passport.user)
 
 
-//   function show(req, res) {
-//     User.findById(req.params.id, function(err, users) {
-//         console.log(users)
-//         res.render('users/profile', {
-//           users
-//         })
-//       });
-//   };
+  function show(req, res) {
+    console.log(req.user)
+        res.render('users/index', {
+          user:req.user
+        })
+  };
   
+
+
+// function create(req, res) {
+//     User.findById(req.params.id, function(err, user) {
+//       user.about.push(req.body);
+//       user.save(function(err) {
+//         res.redirect('/users');
+//       });
+//     });
+//   }
 
 
