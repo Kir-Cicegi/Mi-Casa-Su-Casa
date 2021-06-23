@@ -9,6 +9,10 @@ router.get('/', function(req, res, next) {
 
 router.get('/welcome', function(req, res, next) {
   //write the condition of if name isnt empt then 
+
+  // if (req.user.city = ""){
+
+  // }
   res.render('welcome', { title: 'Mi Casa Su Casa' });
 });
 

@@ -2,24 +2,32 @@ var User = require('../models/user');
 const passport = require('passport');
 
 module.exports = {
-  update,
+  addAbout,
     show,
+    about
 //   index,
 };
 
+function about(req, res){
+    res.render('users/form', {
+        user:req.user
+      })
+}
 
-
-
-
-function update(req, res) {
-    User.findById(req.params.id, function(err, user) {
-        
-      user.push(req.body);
-      user.save(function(err, user) {
+function addAbout(req, res, next) {
+    (console.log("it hits addabout"))
+    req.user.city = req.body.city
+    req.user.about = req.body.about
+    req.user.interests = req.body.interests
+    req.user.dob = req.body.dob
+    req.user.phoneNo = req.body.phoneNo
+      req.user.save(function(err) {
         res.redirect('/users');
       });
-    });
   }
+
+//   function addAbout
+
 
 //modify it to only show user info corresponding to the google id 
 
@@ -33,7 +41,7 @@ function update(req, res) {
 //   }
 
 
-//   const _id = ObjectID(req.session.passport.user)
+
 
 
   function show(req, res) {
@@ -45,13 +53,5 @@ function update(req, res) {
   
 
 
-// function create(req, res) {
-//     User.findById(req.params.id, function(err, user) {
-//       user.about.push(req.body);
-//       user.save(function(err) {
-//         res.redirect('/users');
-//       });
-//     });
-//   }
 
 
