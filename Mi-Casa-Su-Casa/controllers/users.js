@@ -37,7 +37,7 @@ function update(req, res) {
 
 
   function show(req, res) {
-    console.log(req.user)
+    console.log("this is req user",req.user)
         res.render('users/index', {
           user:req.user
         })
