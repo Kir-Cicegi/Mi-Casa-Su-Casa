@@ -18,6 +18,7 @@ const userSchema = new Schema({
     googleId: String,
     about: {
         type: String, 
+
     },
     interests: {
         type: String, 

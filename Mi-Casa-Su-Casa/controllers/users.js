@@ -4,7 +4,8 @@ const passport = require('passport');
 module.exports = {
   addAbout,
     show,
-    about
+    about,
+    findByCity
 //   index,
 };
 
@@ -31,14 +32,15 @@ function addAbout(req, res, next) {
 
 //modify it to only show user info corresponding to the google id 
 
-//if the googleId matches take them to that show page
-//   function index(req, res) {
-//       console.log("req query", req.query)
-//       console.log("req params", req.params.id)
-//     User.find({}, function(err, user) {
-//       res.render('users/index', { user, name:req.query.name });
-//     });
-//   }
+
+  function findByCity(req, res) {
+      console.log(req.query.city)
+   
+    User.find({city: req.query.city}, function(err, user) {
+        console.log(user)
+      res.render('users/result', { user, name:req.query.name });
+    });
+  }
 
 
 

@@ -43,11 +43,11 @@
                       <li class="active"><a href="#">Home</a></li>
                       <li><a href="#">Messages</a></li>
                     </ul>
-                    <form class="navbar-form navbar-right" role="search">
+                    <form class="navbar-form navbar-right" role="search"action="/users/search">
                       <div class="form-group input-group">
-                        <input type="text" class="form-control" placeholder="Search..">
+                        <input type="search" name="city" class="form-control" placeholder="Search..">
                         <span class="input-group-btn">
-                          <button class="btn btn-default" type="button">
+                          <button class="btn btn-default" type="submit">
                             <span class="glyphicon glyphicon-search"></span>
                           </button>
                         </span>        
@@ -84,7 +84,7 @@
                         </div>
                         <div class="col-sm-12 profile-actions text-right">
                             <button type="button" class="btn btn-success btn-sm"><i class="fa fa-user-circle"></i> <%=user.name%></button>
-                            <button type="button" class="btn btn-primary btn-sm"><i class="fa fa-map-marker"></i> </button>
+                            <button type="button" class="btn btn-primary btn-sm"><i class="fa fa-map-marker"></i><%=user.city%> </button>
                         </div>
                     </div>
                     <div class="content">

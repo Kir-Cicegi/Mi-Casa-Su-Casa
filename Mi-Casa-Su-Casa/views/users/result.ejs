@@ -7,11 +7,13 @@
     <title>Document</title>
 </head>
 <body>
+    <% user.forEach(function(u) { %>
     <ul>
-        <li>Name: <%= users.name%> </li>
-        <li>City: <%= users.city%> </li>
-        <li>Date of Birth: <%= users.dob%> </li>
+        
+        <li>Name: <%= u.name%> </li>
+        <li>City: <%= u.city%> </li>
         
     </ul>
+    <% }); %>
 </body>
 </html>

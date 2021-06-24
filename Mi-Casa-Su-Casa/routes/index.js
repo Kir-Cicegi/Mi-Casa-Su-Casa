@@ -18,8 +18,6 @@ router.get('/welcome', function(req, res, next) {
 });
 
 
-
-
 router.get('/auth/google', passport.authenticate(
   'google',
   { scope: ['profile', 'email'] }

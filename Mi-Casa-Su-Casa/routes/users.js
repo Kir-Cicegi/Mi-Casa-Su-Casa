@@ -15,6 +15,7 @@ router.get('/about', userCtrl.about)
 
 router.post('/comments', commentsCtrl.addComment);
 router.post('/', userCtrl.addAbout);
+router.get('/search', userCtrl.findByCity)
 
 // function isLoggedIn(req, res, next) {
 //   if ( req.isAuthenticated() ) return next();
