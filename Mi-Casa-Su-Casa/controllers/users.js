@@ -5,7 +5,8 @@ module.exports = {
   addAbout,
     show,
     about,
-    findByCity
+    findByCity,
+    getProfile
 //   index,
 };
 
@@ -55,5 +56,12 @@ function addAbout(req, res, next) {
   
 
 
-
+  function getProfile(req, res) {
+    console.log(req.query.city)
+ 
+  User.findById(req.params.id, function(err, user) {
+      console.log(user)
+    res.render('users/profile', { user, name:req.query.name });
+  });
+}
 

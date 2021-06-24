@@ -14,10 +14,14 @@ router.get('/about', userCtrl.about)
 // router.post('/', userCtrl.create);
 
 router.post('/comments', commentsCtrl.addComment);
+router.post('/:id/comments', commentsCtrl.leaveComment);
+router.delete('/:id', commentsCtrl.removeComment);
+
 
 router.post('/', userCtrl.addAbout);
 router.get('/search', userCtrl.findByCity)
-router.post('/:id', commentsCtrl.deleteComment);
+router.get('/:id', userCtrl.getProfile)
+router.delete('/:id', commentsCtrl.deleteComment);
 
 // function isLoggedIn(req, res, next) {
 //   if ( req.isAuthenticated() ) return next();

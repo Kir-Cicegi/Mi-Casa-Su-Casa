@@ -13,7 +13,7 @@
                 <div class="content-page">
                     <div class="profile-banner" style="background:url(https://images.unsplash.com/photo-1471922694854-ff1b63b20054?ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&ixlib=rb-1.2.1&auto=format&fit=crop&w=2104&q=80);" >
                         <div class="col-sm-3 avatar-container">
-                            <img src="https://images.unsplash.com/photo-1520645521318-f03a712f0e67?ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&ixlib=rb-1.2.1&auto=format&fit=crop&w=1500&q=80" class="img-circle profile-avatar" alt="User avatar">
+                            <img src="https://images.unsplash.com/photo-1530789253388-582c481c54b0?ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&ixlib=rb-1.2.1&auto=format&fit=crop&w=1050&q=80" class="img-circle profile-avatar" alt="User avatar">
                         </div>
                         <div class="col-sm-12 profile-actions text-right">
                             <button type="button" class="btn btn-success btn-sm"><i class="fa fa-user-circle"></i> <%=user.name%></button>
@@ -30,9 +30,7 @@
                                         <!-- User button -->
                                     <div class="user-button">
                                         <div class="row">
-                                            <div class="col-lg-6">
-                                                <a href="/users/about"><button type="button" class="btn btn-primary btn-sm btn-block"><i class="fa fa-pencil-square-o "></i> Edit Your Profile</button></a>
-                                            </div>
+                                            
                                             <div class="col-lg-6">
                                                 <button type="button" class="btn btn-primary btn-sm btn-block"><i class="fa fa-envelope"></i> Send Message</button>
                                             </div>
@@ -70,7 +68,7 @@
                                                 
                                                 <!-- Begin timeline -->
                                                 <div class="the-timeline">
-                                                    <form action="/users/comments" method="POST">
+                                                    <form action="/users/<%=user.id%>/comments" method="POST">
                                                         <textarea class="form-control" style="height: 70px;margin-bottom:10px;" placeholder="Add your comment here..." name="content"></textarea>
                                                         <div class="row">
                                                         <div class="col-sm-6">
@@ -85,8 +83,6 @@
                                                     <ul>
 
                                                         <li>
-                                                           
-                                                       
                                                             <% user.comments.forEach(function(c) { %>
                                                                 <form action="/users/<%= c.id %>?_method=DELETE" class="delete-form"
                                                                     id="delete-form" method="POST">
@@ -98,6 +94,9 @@
                                                                 </p>
                                                                 
                                                                 <% }); %>
+
+                                                       
+                                                          
 
                                                         </li>
                                                       

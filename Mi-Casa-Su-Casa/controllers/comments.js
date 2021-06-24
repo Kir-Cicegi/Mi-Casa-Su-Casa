@@ -4,7 +4,9 @@ const user = require('../models/user');
 
 module.exports = {
   addComment,
-  deleteComment
+  deleteComment,
+  leaveComment,
+  removeComment
 };
 
 function addComment(req, res, next) {
@@ -17,13 +19,44 @@ function addComment(req, res, next) {
   });
 }
 
-function deleteComment(req, res) {
-    User.findById(req.params.id, function(err, user){
-        user.comments.id(req.body._id).remove();
+function leaveComment(req, res, next) {
+    User.findById(req.params.id, function(err, user) {
+        console.log(req.body)
+      user.comments.push(req.body);
+      user.save(function(err) {
+        res.redirect(`/users/${user._id}`);
+      });
+    });
+  }
+
+// function deleteComment(req, res) {
+//     User.findById(req.params.id, function(err, user){
+//         user.comments.id(req.body._id).remove();
   
+//             res.redirect('/users');
+//     })
+// }
+
+function deleteComment(req, res){
+    User.findById(req.user.id, function(err, user){
+        let incomingId = req.params.id;
+        user.comments.id(incomingId).remove();
+        user.save(function(err) {
             res.redirect('/users');
-    })
-}
+        })
+    }
+)};
+
+function removeComment(req, res){
+    (console.log("it comes here"))
+    User.findById(req.user.id, function(err, user){
+        let incomingId = req.params.id;
+        user.comments.id(incomingId).remove();
+        user.save(function(err) {
+            res.redirect(`/users/${user._id}`);
+        })
+    }
+)};
 
 // function deleteComment (req, res) {
 //     console.log("it hits here")
