@@ -14,8 +14,10 @@ router.get('/about', userCtrl.about)
 // router.post('/', userCtrl.create);
 
 router.post('/comments', commentsCtrl.addComment);
+
 router.post('/', userCtrl.addAbout);
 router.get('/search', userCtrl.findByCity)
+router.post('/:id', commentsCtrl.deleteComment);
 
 // function isLoggedIn(req, res, next) {
 //   if ( req.isAuthenticated() ) return next();
