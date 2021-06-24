@@ -4,16 +4,56 @@
     <meta charset="UTF-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel='stylesheet' href='/stylesheets/style.css' />
+
+    <link href="https://maxcdn.bootstrapcdn.com/font-awesome/4.3.0/css/font-awesome.min.css" rel="stylesheet">
+    <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.4.1/js/bootstrap.min.js"></script>
     <title>Document</title>
 </head>
 <body>
-    <% user.forEach(function(u) { %>
-    <ul>
-        
-        <li>Name: <%= u.name%> </li>
-        <li>City: <%= u.city%> </li>
-        
-    </ul>
-    <% }); %>
+    
+
+
+    <div class="content">
+       
+        <div class="container">
+           
+            <div class="row">
+                <% user.forEach(function(u) { %>
+                <div class="col-lg-4">
+                    <div class="text-center card-box">
+                        <div class="member-card pt-2 pb-2">
+                            <div class="thumb-lg member-thumb mx-auto"><img src="https://images.unsplash.com/photo-1595624871930-6e8537998592?ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&ixlib=rb-1.2.1&auto=format&fit=crop&w=2102&q=80" class="rounded-circle img-thumbnail" alt="profile-image"></div>
+                            <div class="">
+                              
+                                <h4><%= u.name%></h4>
+                                <p class="text-muted">@<%= u.city%>  <span>| </span><span><a href="#" class="text-pink"><%= u.email%></a></span></p>
+                                
+                            </div>
+                            <div class="user-button">
+                                <div class="row">
+                                    <div class="col-lg-6">
+                                        <button type="button" class="btn btn-primary btn-sm btn-block"><i class="fa fa-envelope"></i> Send Message</button>
+                                    </div>
+                                    <br>
+                                    <div class="col-lg-6">
+                                        <button type="button" class="btn btn-default btn-sm btn-block"><i class="fa fa-user"></i> Add as friend</button>
+                                    </div>
+                                </div>
+                            </div><!-- End div .user-button -->
+                        </div>
+                    </div>
+                </div>
+                <% }); %>
+                <!-- end col -->
+                
+            
+            <!-- end row -->
+        </div>
+        <!-- container -->
+    </div>
+
+
 </body>
+
 </html>
