@@ -15,7 +15,7 @@ router.get('/about', userCtrl.about)
 
 router.post('/comments', commentsCtrl.addComment);
 router.post('/:id/comments', commentsCtrl.leaveComment);
-router.delete('/:id', commentsCtrl.removeComment);
+router.delete('/:id/comments/:id', commentsCtrl.removeComment);
 
 
 router.post('/', userCtrl.addAbout);

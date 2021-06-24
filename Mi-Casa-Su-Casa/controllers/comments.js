@@ -49,8 +49,10 @@ function deleteComment(req, res){
 
 function removeComment(req, res){
     (console.log("it comes here"))
-    User.findById(req.user.id, function(err, user){
+    console.log(user.id)
+    User.findById(user.id, function(err, user){
         let incomingId = req.params.id;
+        console.log(user)
         user.comments.id(incomingId).remove();
         user.save(function(err) {
             res.redirect(`/users/${user._id}`);
@@ -58,11 +60,3 @@ function removeComment(req, res){
     }
 )};
 
-// function deleteComment (req, res) {
-//     console.log("it hits here")
-//     console.log(req.params.id)
-//     User.findByIdAndRemove(req.params.id)
-//     console.log("this is x", x)
-//         res.redirect('/users')
-   
-// }

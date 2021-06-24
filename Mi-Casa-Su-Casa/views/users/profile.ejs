@@ -84,7 +84,7 @@
 
                                                         <li>
                                                             <% user.comments.forEach(function(c) { %>
-                                                                <form action="/users/<%= c.id %>?_method=DELETE" class="delete-form"
+                                                                <form action="/users/<%= user.id%>/comments/<%= c.id%>?_method=DELETE" class="delete-form"
                                                                     id="delete-form" method="POST">
                                                                     <button type="submit">X</button>
               </form>
