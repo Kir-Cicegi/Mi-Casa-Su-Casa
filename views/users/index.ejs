@@ -1,14 +1,9 @@
 <%- include('../partials/header') %>
 
-<!--end of nav-->
 <div class="row py-5 px-4">
     <div class="col-md-5 mx-auto">
-        <!-- Profile widget -->
+       <!-- Begin user profile -->
         <div class="bg-white shadow rounded overflow-hidden">
-           
-
-            <!--end of profile pic -->
-
             <div class="container bootdey">
                 <div class="content-page">
                     <div class="profile-banner" style="background:url(http://beingcovers.com/media/facebook-cover/Beautiful-Beach-Sunset-facebook-covers-3661.jpg);" >
@@ -21,10 +16,8 @@
                         </div>
                     </div>
                     <div class="content">
-                
                         <div class="row">
                             <div class="col-sm-3">
-                                <!-- Begin user profile -->
                                 <div class="text-center user-profile-2" style="margin-top:120px">
                                     
                                         <!-- User button -->
@@ -33,23 +26,17 @@
                                             <div class="col-lg-6">
                                                 <a href="/users/about"><button type="button" class="btn btn-primary btn-sm btn-block"><i class="fa fa-pencil-square-o "></i> Edit Your Profile</button></a>
                                             </div>
-                                
                                         </div>
                                     </div><!-- End div .user-button -->
                                 </div><!-- End div .box-info -->
-                                <!-- Begin user profile -->
                             </div><!-- End div .col-sm-4 -->
                             
                             <div class="col-sm-9">
                                 <div class="widget widget-tabbed">
                                     <!-- Nav tab -->
                                     <ul class="nav nav-tabs nav-justified">
-
                                       <li><a href="#about" data-toggle="tab"><i class="fa fa-user"></i> About</a></li>
                                       <li class="active"><a href="#my-timeline" data-toggle="tab"><i class="fa fa-comments"></i> Thoughts</a></li>
-
-                                      
-
                                       <li><a href="#user-activities" data-toggle="tab"><i class="fa fa-users"></i> Contacts</a></li>
                                       <li><a href="#mymessage" data-toggle="tab"><i class="fa fa-envelope"></i> Message</a></li>
                                     </ul>
@@ -58,12 +45,11 @@
                                     <!-- Tab panes -->
                                     <div class="tab-content">
                                         
-                                        
-                                        <!-- Tab timeline -->
+                                        <!-- Tab thoughts -->
                                         <div class="tab-pane animated active fadeInRight" id="my-timeline">
                                             <div class="user-profile-content">
                                                 
-                                                <!-- Begin timeline -->
+                                                <!-- Begin thoughts -->
                                                 <div class="the-timeline">
                                                     <form action="/users/comments" method="POST">
                                                         <textarea class="form-control" style="height: 70px;margin-bottom:10px;" placeholder="Penny for your thoughts..." name="content"></textarea>
@@ -77,27 +63,23 @@
                                                         </div>
                                                     </form>
                                                     <br><br>
-                                                   
-                                                           
-                                                       
-                                                            <% user.comments.forEach(function(c) { %>
-                                                                <form action="/users/<%= c.id %>?_method=DELETE" class="delete-form"
-                                                                    id="delete-form" method="POST">
-                                                                    <button type="submit">X</button>
-                                                                 </form>
-                                                                <h4><%= c.createdAt.toLocaleDateString() %></h4>
-                                                                <p>
-                                                                    <%= c.content %> 
-                                                                </p>
+                            
+                                                    <% user.comments.forEach(function(c) { %>
+
+                                                    <form action="/users/<%= c.id %>?_method=DELETE" class="delete-form" id="delete-form" method="POST">
+                                                        <button type="submit">X</button>
+                                                    </form>
+                                                    <h4><%= c.createdAt.toLocaleDateString() %></h4>
+                                                    <p><%= c.content %> </p>
                                                                 
-                                                                <% }); %>
+                                                    <% }); %>
 
                                                         
-                                                </div><!-- End div .the-timeline -->
-                                                <!-- End timeline -->
+                                                </div><!-- End div .the-thoughts -->
+                         
                                             </div><!-- End div .user-profile-content -->
                                         </div><!-- End div .tab-pane -->
-                                        <!-- End Tab timeline -->
+                                        <!-- End Tab thoughts-->
                                         
                                         <!-- Tab about -->
                                         <div class="tab-pane animated fadeInRight" id="about">
@@ -136,13 +118,13 @@
                                         <!-- End Tab about -->
                                         
                                         
-                                        <!-- Tab user activities -->
+                                        <!-- Tab contacts -->
                                         <div class="tab-pane animated fadeInRight" id="user-activities">
                                             <div class="scroll-user-widget">
                                                 <ul class="media-list">
                                                     <li class="media">
                                                         <a href="#fakelink">
-                                                        <p><strong>John Doe</strong> Uploaded a photo <strong>"DSC000254.jpg"</strong>
+                                                        <p><strong>John Doe</strong> sent you a friend request
                                                         <br><i>2 minutes ago</i></p>
                                                         </a>
                                                     </li>
@@ -150,7 +132,7 @@
                                                 </ul>
                                             </div><!-- End div .scroll-user-widget -->
                                         </div><!-- End div .tab-pane -->
-                                        <!-- End Tab user activities -->
+                                        <!-- End Tab contacts -->
                                         
                                         <!-- Tab user messages -->
                                         <div class="tab-pane animated fadeInRight" id="mymessage">
@@ -198,16 +180,6 @@
     </div>
 </div>
             
-
-        
-          
-                
-
-
-
-
-
-    
   
 </body>
 </html>

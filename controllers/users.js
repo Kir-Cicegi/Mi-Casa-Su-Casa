@@ -7,10 +7,8 @@ module.exports = {
     about,
     findByCity,
     getProfile
-//   index,
+
 };
-
-
 
 
 function about(req, res){
@@ -20,7 +18,6 @@ function about(req, res){
 }
 
 function addAbout(req, res, next) {
-    (console.log("it hits addabout"))
     req.user.city = req.body.city
     req.user.about = req.body.about
     req.user.interests = req.body.interests
@@ -31,40 +28,25 @@ function addAbout(req, res, next) {
       });
   }
 
-//   function addAbout
-
-
-//modify it to only show user info corresponding to the google id 
-
 
   function findByCity(req, res) {
-      console.log(req.query.city)
-   
-    User.find({city: req.query.city}, function(err, user) {
-        console.log(user)
-      res.render('users/result', { user, name:req.query.name });
+      User.find({city: req.query.city}, function(err, user) {
+        res.render('users/result', { user, name:req.query.name });
     });
   }
 
 
 
-
-
   function show(req, res) {
-    console.log("this is req user",req.user)
-        res.render('users/index', {
+      res.render('users/index', {
           user:req.user
         })
   };
   
 
-
   function getProfile(req, res) {
-    console.log(req.query.city)
- 
-  User.findById(req.params.id, function(err, user) {
-      console.log(user)
-    res.render('users/profile', { user, name:req.query.name });
+      User.findById(req.params.id, function(err, user) {
+        res.render('users/profile', { user, name:req.query.name });
   });
 }
 

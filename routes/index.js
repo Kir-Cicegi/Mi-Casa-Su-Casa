@@ -8,12 +8,10 @@ router.get('/', function(req, res, next) {
 });
 
 router.get('/welcome', function(req, res, next) {
-  //write the condition of if name isnt empt then 
-
   if (!req.user.dob ){
     res.render('users/form')
   }else {
-  res.render('users/index', { title: 'Mi Casa Su Casa', user: req.user, name:req.query.name});
+    res.render('users/index', { title: 'Mi Casa Su Casa', user: req.user, name:req.query.name});
   }
 });
 

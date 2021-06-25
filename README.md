@@ -1,6 +1,6 @@
 # Mi-Casa-Su-Casa
 
-> Stop Planning && Start Living.
+> Stop Planning && Start Living
 
 
 ### Overview 
@@ -21,7 +21,7 @@ The app lets you connect with people from all over the world.
 ### Screenshot
 
 ![Login Page](https://i.imgur.com/jp3gCTB.png)
-![User Profile](https://imgur.com/IC1GauU)
+![User Profile](https://i.imgur.com/ZhJpAut.png)
 ![Responsive](https://i.imgur.com/bmuM4jV.png)
 
 ### Technologies Used
@@ -30,6 +30,8 @@ The app lets you connect with people from all over the world.
 - Express
 - Mongoose
 - OAuth Authentication
+
+Credits: Code snippets built with bootstrap framework by **<a href="https://www.bootdey.com">Bootdey</a>** was used for styling.
 
 ### Getting Started 
 

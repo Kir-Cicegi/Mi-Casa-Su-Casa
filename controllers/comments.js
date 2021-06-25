@@ -29,13 +29,7 @@ function leaveComment(req, res, next) {
     });
   }
 
-// function deleteComment(req, res) {
-//     User.findById(req.params.id, function(err, user){
-//         user.comments.id(req.body._id).remove();
-  
-//             res.redirect('/users');
-//     })
-// }
+
 
 function deleteComment(req, res){
     User.findById(req.user.id, function(err, user){
@@ -47,8 +41,9 @@ function deleteComment(req, res){
     }
 )};
 
+
+//still working on the deleting the comments on other profiles.
 function removeComment(req, res){
-    (console.log("it comes here"))
     console.log(user.id)
     User.findById(user.id, function(err, user){
         let incomingId = req.params.id;

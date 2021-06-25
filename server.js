@@ -5,10 +5,7 @@ var cookieParser = require('cookie-parser');
 var logger = require('morgan');
 var session = require('express-session');
 var passport = require('passport');
-
 const methodOverride = require("method-override");
-
-
 
 
 
@@ -43,7 +40,7 @@ app.use(methodOverride('_method'));
 
 app.use('/', indexRouter);
 app.use('/users', usersRouter);
-// app.use('/', commentsRouter);
+
 
 
 // catch 404 and forward to error handler
