@@ -11,6 +11,7 @@ var commentsCtrl = require('../controllers/comments');
 router.get('/', userCtrl.show);
 router.get('/about', userCtrl.about)
 
+
 // router.post('/', userCtrl.create);
 
 router.post('/comments', commentsCtrl.addComment);

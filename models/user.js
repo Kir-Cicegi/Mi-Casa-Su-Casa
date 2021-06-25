@@ -28,7 +28,7 @@ const userSchema = new Schema({
     },
     city: String,
     dob: {
-        type: Date,
+        type: String,
        
     },
     email: String,

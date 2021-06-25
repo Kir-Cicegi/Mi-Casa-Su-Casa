@@ -4,61 +4,103 @@
     <meta charset="UTF-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Document</title>
+    <link href="https://maxcdn.bootstrapcdn.com/font-awesome/4.3.0/css/font-awesome.min.css" rel="stylesheet">
+    <title>Form</title>
+    <style>
+      body{
+        text-align: center;
+        background-image: url('https://images.unsplash.com/photo-1500530855697-b586d89ba3ee?ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&ixlib=rb-1.2.1&auto=format&fit=crop&w=934&q=80');
+        background-size: cover;
+        font-size:20px;
+        color:blanchedalmond;
+      }
+     
+    </style>
 </head>
 <body>
-    <!-- make the form to register details -->
+    <div class="container bootstrap snippets bootdeys">
+    <div class="row">
+      <div class="col-xs-12 col-sm-9">
+        <form class="form-horizontal">
+           
+            <div class="container">
+          <div class="panel panel-default">
+            <div class="panel-heading">
+            <h4 class="panel-title">Little about yourself</h4>
+            </div>
+            <div class="panel-body">
+              
+                <form id="about-me" action="/users" method="POST">
+                
+                  <div class="form-group">
+                    <label class="col-sm-2 control-label">Fun facts about you:</label>
+                    <div class="col-sm-10">
+                      <textarea rows="3" class="form-control" name="about"></textarea>
+                    </div>
+                  </div>
+                  <div class="form-group">
+                    <label class="col-sm-2 control-label">Interests:</label>
+                    <div class="col-sm-10">
+                      <textarea rows="3" class="form-control" name="interests"></textarea>
+                    </div>
+                  </div>
+                  <div class="form-group">
+                    <label class="col-sm-2 control-label">City:</label>
+                    <div class="col-sm-10">
+                      <input type="text" class="form-control" name="city">
+                    </div>
+                  </div>
+                  <div class="form-group">
+                    <label class="col-sm-2 control-label">Date of Birth:</label>
+                    <div class="col-sm-10">
+                      <input type="date" class="form-control" name="dob">
+                    </div>
+                  </div>
+            </div>
+          </div>
+    
+          <div class="panel panel-default">
+            <div class="panel-heading">
+            <h4 class="panel-title">Contact info</h4>
+            </div>
+            <div class="panel-body">
+              <div class="form-group">
+                <label class="col-sm-2 control-label">Phone number</label>
+                <div class="col-sm-10">
+                  <input type="tel" class="form-control" name="phoneNo">
+                </div>
+              </div>
+              <br><br>
+             
+              
+              
+            </div>
+          </div>
+    
+          <div class="panel panel-default">
+      
+            <div class="panel-body">
+              
+              
+              
+              <div class="form-group">
+                <div class="col-sm-10 col-sm-offset-2">
+                  <button type="submit" value="Update Profile" class="btn btn-primary">Submit</button>
+                  <button type="reset" class="btn btn-default">Cancel</button>
+                </div>
+              </div>
+            </div>
+          </div>
+        </form>
+      </div>
+    </div>
+    </div>
+  </div>
 
-    <form id="about-me" action="/users" method="POST">
-        <label>About Me:</label>
-        <input type="text" name="about" >
-        <br><br>
-        <label>My interests:</label>
-        <input type="text" name="interests" >
-        <br><br>
-        <label>Date of Birth:
-            <input type="date" name="dob">
-        </label>
-        <br><br>
-        <label>City:</label>
-        <input type="text" name="city">
-        <br><br>
-        <label>Phone Number:</label>
-        <input type="number" name="phoneNo">
-        <!-- <br><br>
-        <label>Ranking:</label>
-        <select name="ranking">
-          <option value="1">1</option>
-          <option value="2">2</option>
-          <option value="3">3</option>
-          <option value="4">4</option>
-          <option value="5">5</option>
-        </select> -->
-        <br><br>
-        <!-- <form>
-            <label>Gender:
-            <input type="radio" id="male" name="gender" value="male">
-            <label for="male">Male</label>
-            <input type="radio" id="female" name="gender" value="female">
-            <label for="female">Female</label>
-            <input type="radio" id="other" name="gender" value="other">
-            <label for="other">Other</label>
-            </label>
-          </form> -->
-          <br><br>
-          
-        <input type="submit" value="Update Profile">
-      </form>
+  </form>
+
+     
     
 </body>
 </html>
 
-
-<!--About me text area
-    email
-    phone number
-    city
-    dob
-
-
--->

@@ -11,7 +11,7 @@
 
             <div class="container bootdey">
                 <div class="content-page">
-                    <div class="profile-banner" style="background:url(https://images.unsplash.com/photo-1471922694854-ff1b63b20054?ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&ixlib=rb-1.2.1&auto=format&fit=crop&w=2104&q=80);" >
+                    <div class="profile-banner" style="background:url(https://timelinecovers.pro/facebook-cover/download/hawaiian-beach-sunset-facebook-cover.jpg);" >
                         <div class="col-sm-3 avatar-container">
                             <img src="https://images.unsplash.com/photo-1530789253388-582c481c54b0?ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&ixlib=rb-1.2.1&auto=format&fit=crop&w=1050&q=80" class="img-circle profile-avatar" alt="User avatar">
                         </div>
@@ -54,7 +54,7 @@
                                       
 
                                       <li><a href="#user-activities" data-toggle="tab"><i class="fa fa-users"></i> Contacts</a></li>
-                                      <li><a href="#mymessage" data-toggle="tab"><i class="fa fa-envelope"></i> Message</a></li>
+                                      
                                     </ul>
                                     <!-- End nav tab -->
                 
@@ -80,15 +80,17 @@
                                                         </div>
                                                     </form>
                                                     <br><br>
-                                                    <ul>
-
-                                                        <li>
+                                                 
+                                                
                                                             <% user.comments.forEach(function(c) { %>
-                                                                <form action="/users/<%= user.id%>/comments/<%= c.id%>?_method=DELETE" class="delete-form"
+
+                                    <!--I am currently working on delete function for the comments -->
+                                                                <!-- <form action="/users/:id/comments/:id?_method=DELETE" class="delete-form"
                                                                     id="delete-form" method="POST">
                                                                     <button type="submit">X</button>
-              </form>
+                                                                </form> -->
                                                                 <h4><%= c.createdAt.toLocaleDateString() %></h4>
+                                                         
                                                                 <p>
                                                                     <%= c.content %> 
                                                                 </p>
@@ -97,10 +99,9 @@
 
                                                        
                                                           
-
-                                                        </li>
+                                                   
                                                       
-                                                    </ul>
+                                                  
                                                 </div><!-- End div .the-timeline -->
                                                 <!-- End timeline -->
                                             </div><!-- End div .user-profile-content -->
@@ -150,7 +151,7 @@
                                                 <ul class="media-list">
                                                     <li class="media">
                                                         <a href="#fakelink">
-                                                        <p><strong>John Doe</strong> Uploaded a photo <strong>"DSC000254.jpg"</strong>
+                                                        <p><strong>John Doe</strong> sent you a friend request
                                                         <br><i>2 minutes ago</i></p>
                                                         </a>
                                                     </li>
@@ -160,41 +161,7 @@
                                         </div><!-- End div .tab-pane -->
                                         <!-- End Tab user activities -->
                                         
-                                        <!-- Tab user messages -->
-                                        <div class="tab-pane animated fadeInRight" id="mymessage">
-                                            <div class="scroll-user-widget">
-                                                <ul class="media-list">
-                                                  <li class="media">
-                                                    <a class="pull-left" href="#fakelink">
-                                                      <img class="media-object user-message" src="https://bootdey.com/img/Content/avatar/avatar1.png" alt="Avatar">
-                                                    </a>
-                                                    <div class="media-body">
-                                                      <h4 class="media-heading"><a href="#fakelink">John Doe</a> <small>Just now</small></h4>
-                                                      <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit</p>
-                                                    </div>
-                                                  </li>
-                                                  <li class="media">
-                                                    <a class="pull-left" href="#fakelink">
-                                                      <img class="media-object user-message" src="https://bootdey.com/img/Content/avatar/avatar2.png" alt="Avatar">
-                                                    </a>
-                                                    <div class="media-body">
-                                                      <h4 class="media-heading"><a href="#fakelink">Annisa</a> <small>Yesterday at 04:00 AM</small></h4>
-                                                      <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Nam rhoncus</p>
-                                                    </div>
-                                                  </li>
-                                                  <li class="media">
-                                                    <a class="pull-left" href="#fakelink">
-                                                      <img class="media-object user-message" src="https://bootdey.com/img/Content/avatar/avatar3.png" alt="Avatar">
-                                                    </a>
-                                                    <div class="media-body">
-                                                      <h4 class="media-heading"><a href="#fakelink">Rusmanovski</a> <small>January 17, 2014 05:35 PM</small></h4>
-                                                      <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit</p>
-                                                    </div>
-                                                  </li>
-                                                  
-                                                </ul>
-                                            </div><!-- End div .scroll-user-widget -->
-                                        </div><!-- End div .tab-pane -->
+                                       
                                         <!-- End Tab user messages -->
                                     </div><!-- End div .tab-content -->
                                 </div><!-- End div .box-info -->

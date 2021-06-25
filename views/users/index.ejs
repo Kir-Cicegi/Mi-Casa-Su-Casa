@@ -11,9 +11,9 @@
 
             <div class="container bootdey">
                 <div class="content-page">
-                    <div class="profile-banner" style="background:url(https://images.unsplash.com/photo-1471922694854-ff1b63b20054?ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&ixlib=rb-1.2.1&auto=format&fit=crop&w=2104&q=80);" >
+                    <div class="profile-banner" style="background:url(http://beingcovers.com/media/facebook-cover/Beautiful-Beach-Sunset-facebook-covers-3661.jpg);" >
                         <div class="col-sm-3 avatar-container">
-                            <img src="https://images.unsplash.com/photo-1520645521318-f03a712f0e67?ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&ixlib=rb-1.2.1&auto=format&fit=crop&w=1500&q=80" class="img-circle profile-avatar" alt="User avatar">
+                            <img src="https://images.unsplash.com/photo-1473625247510-8ceb1760943f?ixlib=rb-1.2.1&ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&auto=format&fit=crop&w=1899&q=80" class="img-circle profile-avatar" alt="User avatar">
                         </div>
                         <div class="col-sm-12 profile-actions text-right">
                             <button type="button" class="btn btn-success btn-sm"><i class="fa fa-user-circle"></i> <%=user.name%></button>
@@ -33,12 +33,7 @@
                                             <div class="col-lg-6">
                                                 <a href="/users/about"><button type="button" class="btn btn-primary btn-sm btn-block"><i class="fa fa-pencil-square-o "></i> Edit Your Profile</button></a>
                                             </div>
-                                            <div class="col-lg-6">
-                                                <button type="button" class="btn btn-primary btn-sm btn-block"><i class="fa fa-envelope"></i> Send Message</button>
-                                            </div>
-                                            <div class="col-lg-6">
-                                                <button type="button" class="btn btn-default btn-sm btn-block"><i class="fa fa-user"></i> Add as friend</button>
-                                            </div>
+                                
                                         </div>
                                     </div><!-- End div .user-button -->
                                 </div><!-- End div .box-info -->
@@ -51,7 +46,7 @@
                                     <ul class="nav nav-tabs nav-justified">
 
                                       <li><a href="#about" data-toggle="tab"><i class="fa fa-user"></i> About</a></li>
-                                      <li class="active"><a href="#my-timeline" data-toggle="tab"><i class="fa fa-comments"></i> Comments</a></li>
+                                      <li class="active"><a href="#my-timeline" data-toggle="tab"><i class="fa fa-comments"></i> Thoughts</a></li>
 
                                       
 
@@ -71,7 +66,7 @@
                                                 <!-- Begin timeline -->
                                                 <div class="the-timeline">
                                                     <form action="/users/comments" method="POST">
-                                                        <textarea class="form-control" style="height: 70px;margin-bottom:10px;" placeholder="Add your comment here..." name="content"></textarea>
+                                                        <textarea class="form-control" style="height: 70px;margin-bottom:10px;" placeholder="Penny for your thoughts..." name="content"></textarea>
                                                         <div class="row">
                                                         <div class="col-sm-6">
                                                             <a class="btn btn-sm btn-default"><i class="fa fa-camera"></i></a>
@@ -82,16 +77,14 @@
                                                         </div>
                                                     </form>
                                                     <br><br>
-                                                    <ul>
-
-                                                        <li>
+                                                   
                                                            
                                                        
                                                             <% user.comments.forEach(function(c) { %>
                                                                 <form action="/users/<%= c.id %>?_method=DELETE" class="delete-form"
                                                                     id="delete-form" method="POST">
                                                                     <button type="submit">X</button>
-              </form>
+                                                                 </form>
                                                                 <h4><%= c.createdAt.toLocaleDateString() %></h4>
                                                                 <p>
                                                                     <%= c.content %> 
@@ -99,9 +92,7 @@
                                                                 
                                                                 <% }); %>
 
-                                                        </li>
-                                                      
-                                                    </ul>
+                                                        
                                                 </div><!-- End div .the-timeline -->
                                                 <!-- End timeline -->
                                             </div><!-- End div .user-profile-content -->
